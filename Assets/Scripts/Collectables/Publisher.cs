@@ -10,7 +10,7 @@ public class Publisher : MonoBehaviour
     }
     void Update()
     {
-        EventManager<EventType , int>.TriggerEvent(EventType.ScoreCollected , 12);   
+        EventManager<EventTypes.PlayerEvents , int>.TriggerEvent(EventTypes.PlayerEvents.ScoreCollected , 12);   
     }
 
 }

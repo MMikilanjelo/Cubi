@@ -4,9 +4,13 @@ using UnityEngine;
 using System;
 using System.Net.NetworkInformation;
 using System.Diagnostics.Tracing;
-public enum EventType
+
+public static class EventTypes
 {
-    ScoreCollected,
+    public enum PlayerEvents
+    {
+        ScoreCollected
+    }
 }
 
 
