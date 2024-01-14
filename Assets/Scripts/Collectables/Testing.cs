@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour
 {  
+    public PawerUp _powerUp;
     CircleCollider2D _col;
     public void Awake()
     {
@@ -19,7 +20,11 @@ public class Testing : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D _otherCollider)
     {
-        Debug.Log(_otherCollider);
-        Destroy(gameObject);   
+        var _visitable = _otherCollider.GetComponent<IVisitable>();
+        if(_visitable != null)
+        {
+            _visitable.Accept(_powerUp);
+            Destroy(gameObject);
+        }
     }
 }

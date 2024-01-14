@@ -24,7 +24,6 @@ public static class EventManager<TEventEnum, TEventArgs>
         {
             return;
         }
-        Debug.Log($"Registered Event of type {eventType}");
         if (!eventDictionary.ContainsKey(eventType))
         {
             eventDictionary[eventType] = eventHandler;
