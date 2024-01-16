@@ -9,7 +9,8 @@ public static class EventTypes
 {
     public enum PlayerEvents
     {
-        ScoreCollected
+        ScoreCollected,
+        PlayerDeath,
     }
 }
 

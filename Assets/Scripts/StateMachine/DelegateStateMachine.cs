@@ -6,8 +6,6 @@ public class DelegateStateMachine
 		public  delegate void State();
 
 		private State currentState;
-
-
 		private readonly Dictionary<State , StateFlows> states = new ();
 
 		public void AddState(State normalState , State enterState = null , State exitState = null)
