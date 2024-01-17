@@ -19,7 +19,6 @@ public class ComponentHandler : MonoBehaviour , IVisitable
     {
         _visitableComponents.Add(gameObject.GetOrAddComponent<HealthComponent>());
         _visitableComponents.Add(gameObject.GetOrAddComponent<ManaComponent>());
-
     }
 
 }

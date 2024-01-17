@@ -6,5 +6,5 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PlatformData : ScriptableObject
 {
-    
+    public float _speedPercentmodifire;
 }

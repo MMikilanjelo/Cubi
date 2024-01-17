@@ -11,6 +11,11 @@ public static class EventTypes
     {
         ScoreCollected,
         PlayerDeath,
+        
+    }
+    public enum PlatformEvents
+    {
+        JumpedOnWhitePlatform,
     }
 }
 

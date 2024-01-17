@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 371fce9b73ece5a43b3a4df7eb436b4a, type: 3}
-  m_Name: WhitePlatform
+  m_Name: BluePlatform
   m_EditorClassIdentifier: 
-  _platformName: white
+  _platformName: blue
