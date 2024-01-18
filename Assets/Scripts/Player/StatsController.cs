@@ -1,20 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class StatsController : MonoBehaviour
 {
-    private PlayerController _playerController;
-    private ScriptableStats _scriptableStats;
+    private ScriptableStats _startingMovmentStats;
+   
     public void Awake()
     {
-        _scriptableStats = GetComponent<PlayerController>()._movmentStas;
+        _startingMovmentStats = GetComponent<PlayerController>()._movmentStas;
         EventManager<EventTypes.PlatformEvents,float>
-        .RegisterEvent(EventTypes.PlatformEvents.JumpedOnWhitePlatform , IncreaseMovmentSpeed);
+        .RegisterEvent(EventTypes.PlatformEvents.JumpedOnWhitePlatform , IncreaseJumpPower);
+
+        EventManager<EventTypes.PlatformEvents,float>
+        .RegisterEvent(EventTypes.PlatformEvents.ExitWhitePlatform , DecreaseJumpPower);
+
+        EventManager<EventTypes.PlatformEvents,float>
+        .RegisterEvent(EventTypes.PlatformEvents.JumpedOnGreenPlatform , IncreaseSpeed);
+
+        EventManager<EventTypes.PlatformEvents,float>
+        .RegisterEvent(EventTypes.PlatformEvents.ExitGreenPlatform , DecreaseSpeed);
+
     }
-    public void IncreaseMovmentSpeed(float amount)
+    
+    #region Green Platform
+    public void IncreaseSpeed(float amount)
     {
-        // _scriptableStats.JumpPower += amount;
-        // Debug.Log(amount);
+        _startingMovmentStats.MaxSpeed += amount;
     }
+    public void DecreaseSpeed(float amount)
+    {
+       _startingMovmentStats.MaxSpeed -= amount; 
+    }
+    #endregion 
+    
+    
+    #region White Platform
+    public void IncreaseJumpPower(float amount)
+    {
+        _startingMovmentStats.JumpPower += amount;
+    }
+    public void DecreaseJumpPower(float amount)
+    {
+        _startingMovmentStats.JumpPower -= amount;
+    }
+    #endregion
 }

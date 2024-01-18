@@ -16,6 +16,9 @@ public static class EventTypes
     public enum PlatformEvents
     {
         JumpedOnWhitePlatform,
+        ExitWhitePlatform,
+        JumpedOnGreenPlatform,
+        ExitGreenPlatform,
     }
 }
 
